@@ -1,0 +1,286 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,800;1,500;1,600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    @apply bg-slate-200 text-gray-700
+}
+
+section{
+    @apply mt-24 w-full;
+}
+  
+
+img{
+    @apply block object-cover w-full;
+} 
+
+h1, h2, h3, h4, h5, h6{
+    @apply text-gray-900 leading-4 font-semibold
+
+}
+
+h1{
+    @apply text-4xl
+}
+
+h2{
+    @apply text-3xl
+}
+
+h3{
+    @apply text-2xl
+}
+
+h4{
+    @apply text-xl
+}
+
+h5{
+    @apply text-lg
+}
+
+.btn{
+    @apply inline-block w-fit px-4 py-2 font-medium border cursor-pointer rounded-lg;
+}
+
+.container{
+    @apply w-10/12 mx-auto
+}
+
+.center{
+    @apply text-center pt-20 w-full block;
+}
+
+.blue__btn{
+    @apply bg-sky-500 hover:bg-sky-700 text-white
+}
+
+/* Header */
+
+nav{
+    @apply w-full h-[5rem] grid fixed z-10 top-0 left-0 place-items-center bg-slate-100 border-b-2
+}
+
+.nav__container{
+    @apply relative flex justify-between items-center h-full
+}
+
+.nav__logo{
+    @apply block w-16 ;
+}
+
+.nav__menu{
+    @apply absolute right-0 top-16 flex-col gap-0 font-semibold items-center md:static flex md:flex-row md:gap-12
+}
+
+
+.nav__toggle-btn{
+    @apply inline-block bg-transparent text-xl cursor-pointer md:hidden
+}
+
+@media screen and (max-width:800px) {
+    .nav__menu li{
+        @apply w-full shadow-xl
+    }
+    
+    .nav__menu li a{
+        @apply block bg-white px-8 py-3
+    }
+
+}
+
+/* footer */
+
+footer{
+    @apply bg-gray-600 mt-24 pt-24
+}
+
+.footer__categories{
+    @apply flex flex-wrap items-center justify-center gap-6 mb-20
+}
+
+.footer__categories li{
+    @apply bg-slate-500 text-white px-6 py-3 rounded-lg 
+}
+
+.footer__categories li:hover{
+    @apply bg-white text-gray-600
+}
+
+.footer__copyrights{
+    @apply text-center border-t-2 border-gray-600 p-4 text-white font-light
+}
+
+/* Posts  */
+
+.posts__container{
+    @apply grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-12 lg:grid-cols-3
+}
+
+.post{
+    @apply bg-slate-100 p-4 rounded-lg pb-8;
+}
+
+.post:hover{
+    @apply shadow-2xl
+}
+
+.post__thumbnail{
+    @apply rounded-lg overflow-hidden h-48 
+}
+
+.post__content{
+    @apply mt-6
+}
+
+.post__content h3{
+    @apply mt-4 mx-0 mb-2 hover:underline;
+}
+
+.post__footer{
+    @apply flex justify-between items-end mt-8 ;
+}
+
+.post__author{
+    @apply flex gap-4 items-start
+}
+
+.post__author-avatar{
+    @apply w-10 aspect-square rounded-sm overflow-hidden 
+}
+
+/* Post detail */
+
+.post-detail{
+    @apply w-full bg-transparent mx-auto py-0 md:w-3/6 md:bg-white md:py-2
+}
+
+.post-detail__header{
+    @apply flex justify-between mb-6
+}
+
+.post-detail__buttons{
+    @apply flex gap-2 items-center
+}
+
+.post-detail__thumbnail{
+    @apply my-4 h-fit max-h-96 overflow-hidden
+}
+
+.post-detail p{
+    @apply mb-3
+}
+
+/* Register */
+
+.form{
+    @apply flex flex-col gap-3 
+}
+
+input,select,textarea{
+    @apply w-full py-2 px-4 rounded-md resize-none
+}
+
+.form__error-message{
+    @apply bg-red-500 text-white text-sm py-3 px-6 rounded-md
+}
+
+.form-section{
+    @apply w-full mx-auto h-[calc(100vh-12rem)] grid place-items-center md:w-3/6
+}
+
+.form-section small{
+    @apply block mt-4 
+}
+
+.ql-editor{
+    @apply overflow-scroll bg-white min-h-40 max-h-72
+}
+
+/* Authors */
+
+.authors__container{
+    @apply grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-12 lg:grid-cols-3 xl:grid-cols-4
+}
+
+.author{
+    @apply bg-white p-4 rounded-lg flex gap-4
+}
+
+.author:hover{
+    @apply shadow-xl
+}
+
+.authors__avatar{
+    @apply w-16 aspect-square rounded-full border-4 border-gray-300 overflow-hidden
+}
+
+/* Profile */
+
+.profile__container{
+    @apply grid place-items-center text-center
+}
+
+.avatar__wrapper{
+    @apply w-56 aspect-square relative mx-auto mt-4
+}
+
+.profile__avatar{
+    @apply h-full rounded-full border-8 border-slate-100 overflow-hidden
+}
+
+.avatar__form label, .profile__avatar-btn{
+    @apply bg-gray-700 text-white text-sm absolute right-8 bottom-6 w-8 h-8 grid place-items-center rounded-full
+}
+
+.profile__avatar-btn{
+    @apply cursor-pointer p-0 text-xl bg-blue-500
+}
+
+.form.profile__form{
+    @apply mt-12 mx-auto w-full md:w-3/6
+}
+
+/* Dashboard */
+
+.dashboard__container{
+    @apply flex flex-col gap-4
+}
+
+.dashboard__post{
+    @apply flex flex-col items-center justify-between gap-8 bg-white py-2 px-4 rounded-xl md:flex-row
+}
+
+.dashboard__post-info{
+    @apply flex gap-4 w-full items-center md:gap-8
+}
+
+.dashboard__post-thumbnail{
+    @apply w-20 rounded-sm overflow-hidden md:w-16
+}
+
+.dashboard__post-actions{
+    @apply flex gap-4
+}
+
+/* Loader */
+
+.loader{
+    @apply fixed top-0 left-0 h-full w-full grid place-items-center
+}
+
+.loader__image{
+    @apply w-24 aspect-square
+}
